@@ -8,10 +8,10 @@ import { Strategy } from "passport-local";
 import GoogleStrategy from "passport-google-oauth2";
 import env from "dotenv";
 
+env.config();
 const app = express();
 const port = 3000;
-const saltRounds = process.env.SALT_ROUNDS;
-env.config();
+const saltRounds = 5; // this number should in ENV file
 
 app.use(session({
     secret: process.env.SECRET,
@@ -31,11 +31,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 const db = new pg.Client({
-    user: process.env.USER,
-    host: process.env.HOST,
-    database: process.env.DATABASE,
-    password: process.env.PASSWORD,
-    port: process.env.PORT,
+    user: "postgres",
+    host: "::1",
+    database: "postgres",
+    password: "password",
+    port: "5432",
 });
 
 db.connect();
