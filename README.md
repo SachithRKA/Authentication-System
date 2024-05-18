@@ -20,7 +20,7 @@ Before you begin, make sure you have Node.js installed on your machine.
 
 ### Installation
 
-1. Clone the repository: `git clone https://github.com/SachithRKA/Weather-API.git`
+1. Clone the repository: `git clone git@github.com:SachithRKA/Authentication-System.git`
 2. Navigate to the project directory: `cd Weather-API`
 3. Install dependencies: `npm install`
 
